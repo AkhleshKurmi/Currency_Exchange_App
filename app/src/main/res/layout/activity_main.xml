@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        tools:context=".activities.MainActivity">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_from"
+            android:text="From :"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:id="@+id/spinner_from"
+            android:layout_marginTop="20dp"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintWidth_percent=".5"
+            android:textSize="25sp"
+            app:layout_constraintStart_toEndOf="@id/tv_from"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_to"
+            android:text="To :"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_from"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:id="@+id/spinner_to"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="50dp"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            app:layout_constraintWidth_percent=".5"
+            android:textSize="25sp"
+            app:layout_constraintStart_toEndOf="@id/tv_to"
+            app:layout_constraintTop_toBottomOf="@id/spinner_from"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/til_exchange_quantity"
+            android:layout_marginTop="50dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:layout_constraintTop_toBottomOf="@id/spinner_to">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_quantity"
+                android:hint="Enter Quantity"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Exchange"
+            android:id="@+id/btn_exchange"
+            app:layout_constraintTop_toBottomOf="@id/til_exchange_quantity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_exchange_result"
+            android:layout_marginTop="50dp"
+            android:textSize="30sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_exchange"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress_bar"
+            android:layout_marginTop="50dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/btn_exchange"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
